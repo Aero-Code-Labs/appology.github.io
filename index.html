@@ -1,285 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appology Inc | Production Software Engineering & AI Architecture</title>
+    <title>Appology Inc.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            -webkit-font-smoothing: antialiased;
-        }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        
-        .bg-grid {
-            background-size: 30px 30px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-[#05070F] text-gray-200 min-h-screen overflow-x-hidden selection:bg-blue-500/30 bg-grid">
+<body class="bg-[#0B0F17] text-gray-200 min-h-screen flex flex-col justify-between">
 
-    <!-- Ambient Radial Lighting effects -->
-    <div class="absolute top-0 left-1/3 w-[700px] h-[700px] bg-blue-500/[0.06] rounded-full blur-[150px] pointer-events-none z-0"></div>
-    <div class="absolute top-[600px] right-1/4 w-[600px] h-[600px] bg-purple-500/[0.04] rounded-full blur-[130px] pointer-events-none z-0"></div>
-
-    <!-- Global Navigation Header -->
-    <header class="border-b border-white/[0.05] backdrop-blur-xl bg-[#05070F]/75 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Tech-Infused Brand Logo Asset -->
-            <div class="flex items-center gap-3 group cursor-pointer">
-                <div class="relative w-9 h-9 rounded-xl overflow-hidden border border-emerald-500/20 bg-black flex-shrink-0 ring-1 ring-emerald-500/10">
-                    <canvas id="matrixCanvas" class="w-full h-full opacity-90"></canvas>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-lg font-extrabold tracking-tight text-white">APPOLOGY</span>
-                    <span class="text-[9px] font-bold tracking-[0.25em] text-blue-400 uppercase mono -mt-1">SYSTEMS INC</span>
-                </div>
-            </div>
-
-            <!-- Desktop Menu Options -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                <a href="#architecture" class="hover:text-white transition-colors">Core Focus</a>
-                <a href="#pipeline" class="hover:text-white transition-colors">Application Pipeline</a>
-                <a href="mailto:aerocode95@gmail.com" class="px-4 py-2.5 rounded-xl bg-white text-black font-semibold text-xs tracking-wide uppercase hover:bg-gray-200 transition shadow-lg shadow-white/5">
-                    Connect Studio
-                </a>
-            </nav>
-
-            <!-- Adaptive Mobile Trigger Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition" aria-label="Toggle Menu">
-                <svg id="menuIcon" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
-        </div>
-
-        <!-- Mobile Dynamic Drawer -->
-        <div id="mobileMenu" class="hidden md:hidden border-b border-white/[0.05] bg-[#05070F]/98 backdrop-blur-xl px-6 py-6 space-y-4">
-            <a href="#architecture" onclick="toggleMobileMenu()" class="block text-sm font-medium text-gray-400 hover:text-white">Core Focus</a>
-            <a href="#pipeline" onclick="toggleMobileMenu()" class="block text-sm font-medium text-gray-400 hover:text-white">Application Pipeline</a>
-            <a href="mailto:aerocode95@gmail.com" class="block w-full text-center py-3 rounded-xl bg-white text-black text-xs font-bold uppercase tracking-wide">Connect Studio</a>
-        </div>
+    <header class="max-w-3xl mx-auto w-full px-6 py-8 flex items-center justify-between">
+        <span class="text-base font-semibold tracking-tight text-white">Appology Inc.</span>
+        <a href="mailto:aerocode95@gmail.com" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
     </header>
 
-    <!-- Structural Layout Grid Base -->
-    <main class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="max-w-3xl mx-auto w-full px-6 py-12 flex-grow flex flex-col justify-center">
         
-        <!-- Hero Section Frame -->
-        <section class="pt-20 pb-16 md:pt-28 md:pb-24 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-medium tracking-wider text-emerald-400 uppercase bg-emerald-500/[0.05] rounded-full border border-emerald-500/20 mb-6 backdrop-blur-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Active Engineering Nodes Operational
-            </div>
-            
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
-                Production Software and <br class="hidden sm:inline"/>
-                <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Intelligent Backends</span>
-            </h1>
-            
-            <p class="text-gray-400 text-sm sm:text-base md:text-lg mt-6 max-w-2xl mx-auto leading-relaxed font-light">
-                Appology Systems Inc architectures low-latency automation engines, custom database-backed web services, and modular AI orchestration layers built for enterprise scale.
+        <div class="space-y-3">
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Software Development Studio</h1>
+            <p class="text-gray-400 text-sm sm:text-base max-w-xl leading-relaxed">
+                Building clean, reliable, and high-performance software applications.
             </p>
-        </section>
+        </div>
 
-        <!-- System Diagnostic Dynamic Component (Amaze Widget) -->
-        <section class="mb-24">
-            <div class="bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/[0.06] rounded-2xl p-5 md:p-6 shadow-2xl text-left relative overflow-hidden group">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/[0.06] pb-4 mb-4 gap-2">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-500/30"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/30"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-500/30"></span>
-                        <span class="text-xs text-gray-400 font-medium tracking-wide ml-2 mono">appology_orchestration_cluster.log</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-[10px] uppercase font-mono text-gray-500">
-                        <span>Active Connections: <strong class="text-gray-300">Verified</strong></span>
-                        <span>Latency: <strong class="text-emerald-400">0.24ms</strong></span>
-                    </div>
-                </div>
-                <div class="space-y-2 font-mono text-xs text-gray-400 overflow-x-auto whitespace-nowrap py-1">
-                    <p class="text-gray-500">&gt; Loading modular framework endpoints...</p>
-                    <p>&gt; Injecting structural context memories into multi-turn conversational pipelines... <span class="text-blue-400">[CONNECTED]</span></p>
-                    <p>&gt; Syncing secure relational data mappings with transactional database models... <span class="text-purple-400">[SYNCED]</span></p>
-                    <p>&gt; Streaming real-time analytical token matrices... <span class="text-emerald-400">Active Pipeline Steady (100% Core Integrity)</span></p>
-                </div>
+        <div class="mt-16 pt-6 border-t border-gray-800/60">
+            <h2 class="text-xs font-medium uppercase tracking-wider text-gray-500">Projects</h2>
+            <div class="mt-4 py-8 border border-dashed border-gray-800 rounded-xl text-center">
+                <p class="text-xs text-gray-500">No public projects published yet.</p>
             </div>
-        </section>
-
-        <!-- Core Focus / Capabilities Bento Layout -->
-        <section id="architecture" class="py-16 border-t border-white/[0.05]">
-            <div class="mb-12">
-                <span class="text-xs font-bold tracking-widest text-blue-400 uppercase mono">CORE ENGINEERING SPECIFICATION</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Architectural Standards</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Bento Block 1 -->
-                <div class="p-6 md:p-8 rounded-2xl bg-white/[0.01] border border-white/[0.04] flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300">
-                    <div>
-                        <div class="text-xl">🤖</div>
-                        <h3 class="text-base font-bold text-white mt-4 mb-2">GenAI Framework Design</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed font-light">Structuring modular semantic engines, multi-turn dialogue state validation, and system grounding layers directly leveraging high-performance API architectures.</p>
-                    </div>
-                    <span class="text-[10px] font-mono text-blue-400 uppercase tracking-wider mt-6 block">Context Memory Layers</span>
-                </div>
-                <!-- Bento Block 2 -->
-                <div class="p-6 md:p-8 rounded-2xl bg-white/[0.01] border border-white/[0.04] flex flex-col justify-between hover:border-indigo-500/20 transition-all duration-300">
-                    <div>
-                        <div class="text-xl">⚙️</div>
-                        <h3 class="text-base font-bold text-white mt-4 mb-2">Automated MLOps Solutions</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed font-light">Deploying end-to-end continuous analytical logic frameworks, handling raw record cleaning matrices, and provisioning cloud application hosting configurations.</p>
-                    </div>
-                    <span class="text-[10px] font-mono text-indigo-400 uppercase tracking-wider mt-6 block">Continuous Evaluation</span>
-                </div>
-                <!-- Bento Block 3 -->
-                <div class="p-6 md:p-8 rounded-2xl bg-white/[0.01] border border-white/[0.04] flex flex-col justify-between hover:border-purple-500/20 transition-all duration-300">
-                    <div>
-                        <div class="text-xl">💾</div>
-                        <h3 class="text-base font-bold text-white mt-4 mb-2">Structured Microservices</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed font-light">Developing light, relational microservice routers utilizing persistent databases, modern object-relational mapping controllers, and performant data routing structures.</p>
-                    </div>
-                    <span class="text-[10px] font-mono text-purple-400 uppercase tracking-wider mt-6 block">Relational Schemas</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Deep-Dive Application Pipeline Section (Real Information) -->
-        <section id="pipeline" class="py-16 border-t border-white/[0.05]">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-12 gap-2">
-                <div>
-                    <span class="text-xs font-bold tracking-widest text-purple-400 uppercase mono">ACTIVE INTERNAL DEVELOPMENTS</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">Application Production Pipeline</h2>
-                </div>
-                <span class="inline-flex self-start sm:self-center text-[10px] font-mono text-gray-400 bg-white/[0.03] px-3 py-1.5 rounded-lg border border-white/[0.05] tracking-wider uppercase">
-                    Compiled Assemblies Only
-                </span>
-            </div>
-
-            <!-- Pipeline Stack Links -->
-            <div class="space-y-6">
-                
-                <!-- Product Card 1: Intelligent Agent Engine -->
-                <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-white/[0.01] to-transparent border border-white/[0.04] hover:border-white/[0.08] transition-all duration-300">
-                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                        <div class="space-y-2 max-w-2xl">
-                            <div class="flex items-center gap-3">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase bg-blue-500/10 border border-blue-500/20 text-blue-400">GenAI Core</span>
-                                <h3 class="text-lg font-bold text-white">Context-Aware Conversational Orchestrator</h3>
-                            </div>
-                            <p class="text-gray-400 text-xs md:text-sm font-light leading-relaxed">
-                                A production-ready, modular system backend engineered to maintain complete multi-turn conversation memory arrays. Features intelligent prompt routing, domain-specific background contextual anchoring, and native integration layers built directly on top of modern high-fidelity Generative AI APIs.
-                            </p>
-                        </div>
-                        <div class="flex md:flex-col items-center md:items-end justify-between md:justify-start flex-wrap gap-2 pt-2 md:pt-0 border-t border-white/[0.04] md:border-t-0">
-                            <span class="text-[11px] font-mono text-gray-500">Architecture Integration</span>
-                            <div class="flex gap-2 font-mono text-[10px] text-gray-300 bg-white/[0.02] px-2 py-1 rounded border border-white/[0.04]">
-                                <span>Gemini API</span> • <span>Flask Memory</span> • <span>SQLAlchemy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card 2: Analytics Ingestion Framework -->
-                <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-white/[0.01] to-transparent border border-white/[0.04] hover:border-white/[0.08] transition-all duration-300">
-                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                        <div class="space-y-2 max-w-2xl">
-                            <div class="flex items-center gap-3">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">MLOps Stack</span>
-                                <h3 class="text-lg font-bold text-white">Automated Sentiment Parsing Engine</h3>
-                            </div>
-                            <p class="text-gray-400 text-xs md:text-sm font-light leading-relaxed">
-                                An end-to-end user-review parsing platform operating under strict MLOps principles. The infrastructure automates raw streaming record extraction, text data isolation, exploratory quantitative analysis, and directly hooks into live cloud deployment clusters for sustained predictive metrics delivery.
-                            </p>
-                        </div>
-                        <div class="flex md:flex-col items-center md:items-end justify-between md:justify-start flex-wrap gap-2 pt-2 md:pt-0 border-t border-white/[0.04] md:border-t-0">
-                            <span class="text-[11px] font-mono text-gray-500">Pipeline Dependencies</span>
-                            <div class="flex gap-2 font-mono text-[10px] text-gray-300 bg-white/[0.02] px-2 py-1 rounded border border-white/[0.04]">
-                                <span>Python Pipeline</span> • <span>EDA Matrix</span> • <span>Cloud Deploy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product Card 3: High-Performance Microservice -->
-                <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-white/[0.01] to-transparent border border-white/[0.04] hover:border-white/[0.08] transition-all duration-300">
-                    <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                        <div class="space-y-2 max-w-2xl">
-                            <div class="flex items-center gap-3">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-mono font-bold tracking-wider uppercase bg-purple-500/10 border border-purple-500/20 text-purple-400">Microservices</span>
-                                <h3 class="text-lg font-bold text-white">High-Throughput URL Resolution Engine</h3>
-                            </div>
-                            <p class="text-gray-400 text-xs md:text-sm font-light leading-relaxed">
-                                A clean, lightweight web service designed for instantaneous relational data compression and transactional routing. Driven by a fast SQL structural storage pattern, object-relational abstraction layers, and a modular framework to guarantee stable data persistence under persistent concurrency spikes.
-                            </p>
-                        </div>
-                        <div class="flex md:flex-col items-center md:items-end justify-between md:justify-start flex-wrap gap-2 pt-2 md:pt-0 border-t border-white/[0.04] md:border-t-0">
-                            <span class="text-[11px] font-mono text-gray-500">Core Software Stack</span>
-                            <div class="flex gap-2 font-mono text-[10px] text-gray-300 bg-white/[0.02] px-2 py-1 rounded border border-white/[0.04]">
-                                <span>Flask MVC</span> • <span>SQLite Core</span> • <span>SQLAlchemy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+        </div>
 
     </main>
 
-    <!-- Structural Corporate Footer -->
-    <footer class="border-t border-white/[0.05] bg-[#020307] text-gray-500 text-xs py-12 mt-12">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <div>
-                <p class="font-medium text-gray-400">&copy; 2026 Appology Systems Inc. All architecture rights reserved.</p>
-                <p class="text-[11px] text-gray-600 mt-1">Engineered with absolute mechanical and mathematical precision.</p>
-            </div>
-            <div class="flex gap-8 font-medium text-gray-400">
-                <a href="mailto:aerocode95@gmail.com" class="hover:text-white transition-colors">Inquiries Desk</a>
-                <a href="#architecture" class="hover:text-white transition-colors">System Frameworks</a>
-            </div>
-        </div>
+    <footer class="max-w-3xl mx-auto w-full px-6 py-8 border-t border-gray-900 text-xs text-gray-600 flex justify-between items-center">
+        <span>&copy; 2026 Appology Inc.</span>
     </footer>
 
-    <!-- Digital Matrix Code Loop Logic -->
-    <script>
-        const canvas = document.getElementById('matrixCanvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = 44;
-        canvas.height = 44;
-
-        const alphabet = '01XYZ<>[]{}/\\';
-        const fontSize = 10;
-        const columns = canvas.width / fontSize;
-        const rainDrops = Array(Math.floor(columns)).fill(1);
-
-        function drawMatrixStream() {
-            ctx.fillStyle = 'rgba(5, 7, 15, 0.25)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#10B981'; 
-            ctx.font = 'bold ' + fontSize + 'px monospace';
-
-            for (let x = 0; x < rainDrops.length; x++) {
-                const textCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
-                ctx.fillText(textCharacter, x * fontSize, rainDrops[x] * fontSize);
-
-                if (rainDrops[x] * fontSize > canvas.height && Math.random() > 0.96) {
-                    rainDrops[x] = 0;
-                }
-                rainDrops[x]++;
-            }
-        }
-
-        setInterval(drawMatrixStream, 75);
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
 </body>
 </html>
